@@ -3,6 +3,7 @@ import config from "./config";
 import initDb from "./config/db";
 import { authRoutes } from "./modules/auth/ath.routes";
 import { vehicleRoutes } from "./modules/vehicles/vehicle.routes";
+import { userRoutes } from "./modules/users/user.routes";
 
 const app = express();
 
@@ -20,6 +21,10 @@ app.use("/api/v1/auth", authRoutes);
 
 // vehicles
 app.use("/api/v1/vehicles", vehicleRoutes);
+
+// users
+
+app.use("/api/v1/users", userRoutes);
 
 // not found route
 app.use((req: Request, res: Response) => {
